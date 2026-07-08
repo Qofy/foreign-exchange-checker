@@ -38,12 +38,12 @@ function Converter({}: Props) {
               </div>
             </div>
           </div>
-
+          <div>
+            
+          </div>
           {/* Exchange Rate Info */}
           <div className="exchange-rate-info">
             <span className="rate-text">1 USD = 0.8530 EUR</span>
-          </div>
-
           {/* Action Buttons */}
           <div className="action-buttons">
             <button className="btn btn-favorited">
@@ -53,6 +53,8 @@ function Converter({}: Props) {
               LOG CONVERSION
             </button>
           </div>
+          </div>
+
         </section>
   )
 };
