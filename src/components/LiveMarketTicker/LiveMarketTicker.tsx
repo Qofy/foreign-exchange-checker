@@ -1,8 +1,6 @@
 import { LIVE_MARKET_DATA } from '@/constants'
 
-type Props = {}
-
-function LiveMarketTicker({}: Props) {
+function LiveMarketTicker() {
   return (
     <section className="live-markets">
       <div className="ticker-label">• LIVE MARKETS</div>
