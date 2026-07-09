@@ -8,6 +8,7 @@ import { ChartStats } from '@/components/ChartStats';
 import { TimeRangeSelector } from '@/components/TimeRangeSelector';
 import { ChartHeader } from '@/components/ChartHeader';
 import { ChartSvg } from '@/components/ChartSvg';
+import ConverterWrapper from '../converterWrapper/ConverterWrapper';
 
 const FXChecker: React.FC = () => {
   return (
@@ -24,17 +25,7 @@ const FXChecker: React.FC = () => {
 
         {/* Tabs Section */}
         <section className="tabs-section">
-        <Tabs/>
-
-          {/* Tab Content - History */}
-          {/* <div className="tab-content active"> */}
-  
-            <div className="chart-container">
-            <ChartStats/>
-            <TimeRangeSelector/>
-              <ChartHeader/>
-              <ChartSvg/>
-            </div>
+            <ConverterWrapper/>
           {/* </div> */}
         </section>
       </main>
