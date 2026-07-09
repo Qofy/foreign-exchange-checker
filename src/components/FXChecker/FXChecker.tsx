@@ -27,19 +27,15 @@ const FXChecker: React.FC = () => {
         <Tabs/>
 
           {/* Tab Content - History */}
-          <div className="tab-content active">
-            {/* Chart Stats */}
-
-            {/* Time Range Selector */}
-
-            {/* Chart Container */}
+          {/* <div className="tab-content active"> */}
+  
             <div className="chart-container">
             <ChartStats/>
             <TimeRangeSelector/>
               <ChartHeader/>
               <ChartSvg/>
             </div>
-          </div>
+          {/* </div> */}
         </section>
       </main>
     </div>

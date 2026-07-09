@@ -298,7 +298,7 @@ body {
 .btn-secondary {
   background-color: transparent;
   color: var(--text-primary);
-  border-color: var(--border-color);
+  border-color: var(--primary-dark);
 }
 
 .btn-secondary:hover {

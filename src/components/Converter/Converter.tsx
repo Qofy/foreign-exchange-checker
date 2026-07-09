@@ -1,4 +1,6 @@
-type Props = {}
+type Props = {
+  
+}
 
 function Converter({}: Props) {
   return (
