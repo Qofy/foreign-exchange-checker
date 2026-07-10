@@ -1,8 +1,12 @@
+import './Log.css'
+import LogHeader from './LogHeader'
+import LogList from './LogList'
+
 export default function Log() {
   return (
-    <div style={{ padding: '20px' }}>
-      <h3>Log Content</h3>
-      <p>This is the Log tab</p>
+    <div className="log-container">
+      <LogHeader />
+      <LogList />
     </div>
   )
 }

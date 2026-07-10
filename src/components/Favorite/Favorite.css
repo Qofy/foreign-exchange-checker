@@ -1,0 +1,140 @@
+.favorite-container {
+  width: 100%;
+}
+
+/* Favorite Header */
+.favorite-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0 24px 0;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 20px;
+}
+
+.favorite-title {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+}
+
+.favorite-count {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+}
+
+/* Favorite List */
+.favorite-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Favorite Item */
+.favorite-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.favorite-item:hover {
+  background-color: rgba(200, 255, 0, 0.05);
+}
+
+.favorite-pair {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.5px;
+  min-width: 120px;
+}
+
+.favorite-item-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.favorite-values {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  min-width: 100px;
+}
+
+.favorite-rate {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.5px;
+}
+
+.favorite-change {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.favorite-change.positive {
+  color: var(--primary-color);
+}
+
+.favorite-change.negative {
+  color: var(--negative);
+}
+
+.favorite-btn {
+  background: none;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  font-size: 18px;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  height: 44px;
+}
+
+.favorite-btn:hover {
+  background-color: rgba(200, 255, 0, 0.1);
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .favorite-header {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .favorite-item {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .favorite-item-right {
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .favorite-values {
+    align-items: flex-start;
+  }
+}
