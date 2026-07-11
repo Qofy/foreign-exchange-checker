@@ -4,7 +4,7 @@ function Header({}: Props) {
   return (
      <header className="header">
         <div className="header-left">
-          <h1 className="logo">💱 FX_CHECKER</h1>
+          <img src="/images/logo.svg" alt="logo" />
         </div>
         <div className="header-right">
           <span className="currency-count">55 CURRENCIES</span>

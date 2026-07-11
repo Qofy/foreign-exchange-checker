@@ -201,6 +201,7 @@ body {
   font-weight: 600;
   color: var(--text-primary);
   outline: none;
+  width: 100%;
 }
 
 .amount-input::placeholder {
