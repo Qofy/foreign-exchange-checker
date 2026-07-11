@@ -1,5 +1,3 @@
-import { useState } from 'react'
-
 export type TabType = 'history' | 'compare' | 'favorites' | 'log'
 
 interface TabItem {
@@ -9,7 +7,8 @@ interface TabItem {
 }
 
 interface Props {
-  onTabChange?: (tab: TabType) => void
+  activeTab: TabType
+  onTabChange: (tab: TabType) => void
 }
 
 const TAB_ITEMS: TabItem[] = [
@@ -19,12 +18,9 @@ const TAB_ITEMS: TabItem[] = [
   { id: 'log', label: 'LOG', badge: 0 },
 ]
 
-export default function Tabs({ onTabChange }: Props) {
-  const [activeTab, setActiveTab] = useState<TabType>('history')
-
+export default function Tabs({ activeTab, onTabChange }: Props) {
   const handleTabClick = (tab: TabType) => {
-    setActiveTab(tab)
-    onTabChange?.(tab)
+    onTabChange(tab)
   }
 
   return (

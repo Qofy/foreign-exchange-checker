@@ -1,20 +1,36 @@
-import { useState } from "react"
-import { Tabs } from "../Tabs"
-import { Compare } from "../Compare"
-import { Favorite } from "../Favorite"
-import { Log } from "../Log"
-import { History } from "@/History"
+import { useState } from 'react'
+import { Tabs, Converter } from '@/components'
+import { TabType } from '../Tabs/Tabs'
+import Compare from '../Compare/Compare'
+import Favorite from '../Favorite/Favorite'
+import Log from '../Log/Log'
+import History from '../History/History'
 
 export default function ConverterWrapper() {
-    const [activeTab, setActiveTab] = useState('history')
+  const [activeTab, setActiveTab] = useState<TabType>('history')
+  const [sendAmount, setSendAmount] = useState('0')
+  const [receiveAmount, setReceiveAmount] = useState('0')
+  const [sendCurrency, setSendCurrency] = useState('USD')
+  const [receiveCurrency, setReceiveCurrency] = useState('EUR')
+
   return (
     <>
-    <Tabs onTabChange={setActiveTab}/>
-    {activeTab === 'history' && <History/>}
-    {activeTab === 'compare' && <Compare/>}
-    {activeTab === 'favorites' && <Favorite/>}
-    {activeTab === 'log' && <Log/>}
+      <Converter
+        sendAmount={sendAmount}
+        receiveAmount={receiveAmount}
+        sendCurrency={sendCurrency}
+        receiveCurrency={receiveCurrency}
+        onSendAmountChange={setSendAmount}
+        onReceiveAmountChange={setReceiveAmount}
+        onSendCurrencyChange={setSendCurrency}
+        onReceiveCurrencyChange={setReceiveCurrency}
+      />
 
+      <Tabs activeTab={activeTab} onTabChange={setActiveTab} />
+      {activeTab === 'history' && <History sendAmount={sendAmount} />}
+      {activeTab === 'compare' && <Compare sendAmount={sendAmount} />}
+      {activeTab === 'favorites' && <Favorite sendAmount={sendAmount} />}
+      {activeTab === 'log' && <Log sendAmount={sendAmount} />}
     </>
   )
-};
+}

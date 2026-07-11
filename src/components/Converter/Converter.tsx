@@ -1,15 +1,31 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect } from 'react'
 import { useExchangeRate } from '@/hooks'
 import { SendInput } from './SendInput'
 import { ReceiveOutput } from './ReceiveOutput'
 import { ExchangeRateDisplay } from './ExchangeRateDisplay'
 import { ActionButtons } from './ActionButtons'
 
-function Converter() {
-  const [sendCurrency, setSendCurrency] = useState('USD')
-  const [receiveCurrency, setReceiveCurrency] = useState('EUR')
-  const [sendAmount, setSendAmount] = useState('0')
-  const [receiveAmount, setReceiveAmount] = useState('0')
+interface ConverterProps {
+  sendAmount: string
+  receiveAmount: string
+  sendCurrency: string
+  receiveCurrency: string
+  onSendAmountChange: (amount: string) => void
+  onReceiveAmountChange: (amount: string) => void
+  onSendCurrencyChange: (currency: string) => void
+  onReceiveCurrencyChange: (currency: string) => void
+}
+
+function Converter({
+  sendAmount,
+  receiveAmount,
+  sendCurrency,
+  receiveCurrency,
+  onSendAmountChange,
+  onReceiveAmountChange,
+  onSendCurrencyChange,
+  onReceiveCurrencyChange,
+}: ConverterProps) {
 
   const { data: rateData, isLoading } = useExchangeRate(sendCurrency, receiveCurrency)
 
@@ -22,14 +38,14 @@ function Converter() {
   useEffect(() => {
     if (rateData?.rates?.[receiveCurrency]) {
       const rate = rateData.rates[receiveCurrency]
-      setReceiveAmount(calculateReceive(sendAmount, rate))
+      onReceiveAmountChange(calculateReceive(sendAmount, rate))
     }
-  }, [sendAmount, rateData, receiveCurrency, calculateReceive])
+  }, [sendAmount, rateData, receiveCurrency, calculateReceive, onReceiveAmountChange])
 
   const handleSwap = () => {
-    setSendCurrency(receiveCurrency)
-    setReceiveCurrency(sendCurrency)
-    setSendAmount(receiveAmount)
+    onSendCurrencyChange(receiveCurrency)
+    onReceiveCurrencyChange(sendCurrency)
+    onSendAmountChange(receiveAmount)
   }
 
   return (
@@ -40,8 +56,8 @@ function Converter() {
         <SendInput
           sendAmount={sendAmount}
           sendCurrency={sendCurrency}
-          onAmountChange={setSendAmount}
-          onCurrencyChange={setSendCurrency}
+          onAmountChange={onSendAmountChange}
+          onCurrencyChange={onSendCurrencyChange}
         />
 
         <button className="swap-button" onClick={handleSwap} aria-label="Swap currencies">
@@ -51,7 +67,7 @@ function Converter() {
         <ReceiveOutput
           receiveAmount={receiveAmount}
           receiveCurrency={receiveCurrency}
-          onCurrencyChange={setReceiveCurrency}
+          onCurrencyChange={onReceiveCurrencyChange}
         />
       </div>
 

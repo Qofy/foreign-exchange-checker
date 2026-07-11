@@ -269,6 +269,25 @@ body {
   font-weight: 500;
 }
 
+/* Empty State*/
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #888;
+}
+
+.empty-state-title {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: #ccc;
+}
+
+.empty-state-description {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
 /* Action Buttons */
 .action-buttons {
   display: flex;

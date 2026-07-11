@@ -16,7 +16,7 @@ const FXChecker: React.FC = () => {
       {/* Main Content */}
       <main className="main-content">
         {/* Converter Section */}
-        <Converter/>
+        {/* <Converter {...({} as any)} /> */}
 
         {/* Tabs Section */}
         <section className="tabs-section">
