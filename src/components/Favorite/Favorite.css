@@ -114,6 +114,12 @@
   transform: scale(1.05);
 }
 
+.favorite-icon {
+  width: 20px;
+  height: 20px;
+  filter: invert(82%) sepia(66%) saturate(476%) hue-rotate(70deg) brightness(101%) contrast(99%);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .favorite-header {

@@ -1,6 +1,10 @@
-import us from "../../../public/fonts/"
+import { CurrencySelect } from "@/components"
+import { useState } from "react";
 
 function Converter() {
+  const [sendCurrency, setSendCurrency] = useState('USD')
+  const [receiveCurrency, setReceiveCurrency] = useState('EUR')
+
   return (
     <section className="converter-section">
           <h2 className="section-title">CHECK THE RATE</h2>
@@ -16,15 +20,13 @@ function Converter() {
                   defaultValue="1,000"
                   placeholder="0"
                 />
-                <select className="currency-select">
-                  <option>USD</option>
-                </select>
+                <CurrencySelect value={sendCurrency} onChange={setSendCurrency} />
               </div>
             </div>
 
             {/* Swap Button */}
             <button className="swap-button" aria-label="Swap currencies">
-              ↔
+              <img src="/images/icon-exchange-vertical.svg" alt="swap" />
             </button>
 
             {/* Receive Side */}
@@ -32,9 +34,7 @@ function Converter() {
               <label className="input-label">RECEIVE</label>
               <div className="input-wrapper">
                 <div className="amount-output">853.02</div>
-                <select className="currency-select">
-                  <option>🇪🇺 EUR</option>
-                </select>
+                <CurrencySelect value={receiveCurrency} onChange={setReceiveCurrency} />
               </div>
             </div>
           </div>

@@ -25,7 +25,11 @@ export default function FavoriteItem({
           </div>
         </div>
         <button className="favorite-btn" aria-label="unpin favorite">
-          ⭐
+          <img
+            src="/images/icon-star-filled.svg"
+            alt="unfavorite"
+            className="favorite-icon"
+          />
         </button>
       </div>
     </div>

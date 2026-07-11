@@ -110,11 +110,18 @@
 .compare-favorite {
   background: none;
   border: none;
-  font-size: 20px;
   cursor: pointer;
   padding: 8px;
   transition: transform 0.2s;
-  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.compare-star-icon {
+  width: 20px;
+  height: 20px;
+  filter: invert(82%) sepia(66%) saturate(476%) hue-rotate(70deg) brightness(101%) contrast(99%);
 }
 
 .compare-favorite:hover {

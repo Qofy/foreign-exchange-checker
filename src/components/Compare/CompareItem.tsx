@@ -31,7 +31,11 @@ export default function CompareItem({
           <div className="compare-rate">@ {rate}</div>
         </div>
         <button className="compare-favorite" aria-label="favorite">
-          {isFavorited ? '⭐' : '☆'}
+          <img
+            src={isFavorited ? '/images/icon-star-filled.svg' : '/images/icon-star.svg'}
+            alt="favorite"
+            className="compare-star-icon"
+          />
         </button>
       </div>
     </div>

@@ -12,3 +12,6 @@ export type { FavoriteItem } from './favoriteList'
 
 export { CONVERSION_LOG_DATA } from './conversionLog'
 export type { LogEntry } from './conversionLog'
+
+export { CURRENCIES } from './currencies'
+export type { Currency } from './currencies'

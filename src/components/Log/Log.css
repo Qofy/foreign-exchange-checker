@@ -133,6 +133,12 @@
   color: var(--negative);
 }
 
+.log-delete-icon {
+  width: 18px;
+  height: 18px;
+  filter: invert(45%) sepia(100%) saturate(1000%) hue-rotate(0deg) brightness(95%) contrast(95%);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .log-header {

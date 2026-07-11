@@ -27,7 +27,7 @@ export default function LogItem({
       </div>
 
       <button className="log-delete-btn" aria-label="delete conversion">
-        🗑
+        <img src="/images/icon-delete.svg" alt="delete" className="log-delete-icon" />
       </button>
     </div>
   )
