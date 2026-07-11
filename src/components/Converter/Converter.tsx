@@ -70,6 +70,7 @@ function Converter({
           onCurrencyChange={onReceiveCurrencyChange}
         />
       </div>
+      <div className='align'>
 
       <ExchangeRateDisplay
         sendCurrency={sendCurrency}
@@ -79,6 +80,8 @@ function Converter({
       />
 
       <ActionButtons />
+      </div>
+
     </section>
   )
 }

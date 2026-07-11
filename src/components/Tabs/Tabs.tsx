@@ -12,10 +12,10 @@ interface Props {
 }
 
 const TAB_ITEMS: TabItem[] = [
-  { id: 'history', label: 'HISTORY', badge: 3 },
+  { id: 'history', label: 'HISTORY',  },
   { id: 'compare', label: 'COMPARE' },
-  { id: 'favorites', label: 'FAVORITES', badge: 10 },
-  { id: 'log', label: 'LOG', badge: 0 },
+  { id: 'favorites', label: 'FAVORITES',  },
+  { id: 'log', label: 'LOG', },
 ]
 
 export default function Tabs({ activeTab, onTabChange }: Props) {
