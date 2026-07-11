@@ -3,11 +3,6 @@ import './FXChecker.css';
 import { Header } from '@/components/Header';
 import { LiveMarketTicker } from '@/components/LiveMarketTicker';
 import { Converter } from '@/components/Converter';
-import { Tabs } from '@/components/Tabs';
-import { ChartStats } from '@/components/ChartStats';
-import { TimeRangeSelector } from '@/components/TimeRangeSelector';
-import { ChartHeader } from '@/components/ChartHeader';
-import { ChartSvg } from '@/components/ChartSvg';
 import ConverterWrapper from '../converterWrapper/ConverterWrapper';
 
 const FXChecker: React.FC = () => {

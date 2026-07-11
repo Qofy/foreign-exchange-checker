@@ -1,8 +1,6 @@
-type Props = {
-  
-}
+import us from "../../../public/fonts/"
 
-function Converter({}: Props) {
+function Converter() {
   return (
     <section className="converter-section">
           <h2 className="section-title">CHECK THE RATE</h2>
@@ -19,7 +17,7 @@ function Converter({}: Props) {
                   placeholder="0"
                 />
                 <select className="currency-select">
-                  <option>🇺🇸 USD</option>
+                  <option>USD</option>
                 </select>
               </div>
             </div>
