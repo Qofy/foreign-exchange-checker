@@ -15,6 +15,7 @@ export const getExchangeRate = async (from: string, to: string) => {
         to,
       },
     })
+    // console.log("-------------------Data--------------------------",response.data.amount)
     return response.data
   } catch (error) {
     throw error
